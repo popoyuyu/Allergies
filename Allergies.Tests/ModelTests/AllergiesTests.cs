@@ -13,6 +13,12 @@ namespace Allergies.Tests
       Assert.AreEqual("eggs", Allergens.decodeAllergens(1)[0]);
     }
     [TestMethod]
+    public void IsAllergen_SelectsCorrectKeyValuePair_False()
+    {
+      Allergens.decodeAllergens(1);
+      Assert.AreNotEqual("Your Face!", Allergens.decodeAllergens(1)[0]);
+    }
+    [TestMethod]
     public void IsAllergen_selectingMultipleCorrectItems_True()
     {
       Assert.AreEqual("cats 2018", Allergens.decodeAllergens(131)[0]);
